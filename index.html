@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuraFlow AI Systems | Inbound Sales Infrastructure for High-Ticket Coaches</title>
+    <title>AuraFlow AI Systems | Inbound Sales Infrastructure</title>
     <meta name="description" content="Inbound sales infrastructure that qualifies prospects and routes high-intent conversations to your calendar.">
     
-    <meta property="og:title" content="AuraFlow AI Systems">
-    <meta property="og:description" content="Inbound call qualification infrastructure for high-ticket sales teams.">
-    <meta property="og:type" content="website">
-
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230B1F33'/><circle cx='50' cy='50' r='20' fill='%2300D4FF'/></svg>">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,13 +21,10 @@
             --cyan: #00D4FF;
             --border: rgba(255, 255, 255, 0.08); 
             --solid-nav: rgba(11, 31, 51, 0.95);
-            --glow: linear-gradient(90deg, rgba(0,212,255,0.15), rgba(0,212,255,0));
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--midnight); color: var(--off-white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        
-        /* SCROLL OFFSET & SMOOTH SCROLL */
+        body { font-family: 'Inter', sans-serif; background-color: var(--midnight); color: var(--off-white); line-height: 1.6; }
         html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
         /* --- UTILITIES --- */
@@ -57,57 +49,68 @@
         p { color: var(--slate); font-size: 1.05rem; }
         .section-pad { padding: 80px 0; border-bottom: 1px solid var(--border); }
         .bg-dark { background: var(--midnight-dark); }
+        .text-center { text-align: center; }
 
         /* --- HEADER --- */
         header { padding: 15px 0; position: fixed; width: 100%; top: 0; background: var(--solid-nav); z-index: 1000; border-bottom: 1px solid var(--border); backdrop-filter: blur(10px); }
         nav { display: flex; justify-content: space-between; align-items: center; }
-        
-        /* FIX 1: Defined Logo Class in CSS (40px) */
         .logo-img { height: 40px; width: auto; display: block; }
-        
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-link { font-size: 0.85rem; font-weight: 500; color: var(--slate); }
         .nav-link:hover { color: #fff; }
         .nav-cta { font-size: 0.85rem; font-weight: 700; color: var(--midnight); background: var(--cyan); padding: 8px 16px; border-radius: 4px; }
-
-        /* --- HAMBURGER MENU --- */
         .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
         .hamburger span { width: 25px; height: 2px; background: #fff; }
 
         /* --- HERO --- */
         .hero { padding: 160px 0 80px 0; text-align: center; }
         .hero h1 { font-size: 2.8rem; max-width: 850px; margin: 0 auto 24px auto; }
-        .hero p { font-size: 1.2rem; max-width: 650px; margin: 0 auto 30px auto; }
         
         .hero-bullets { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
         .h-bullet { font-size: 0.9rem; color: #fff; font-weight: 500; display: flex; align-items: center; gap: 6px; }
         .h-bullet::before { content: "✓"; color: var(--cyan); font-weight: 800; }
 
-        /* --- GRIDS & CARDS --- */
+        /* --- CARDS & GRIDS --- */
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
         .card { background: var(--midnight-dark); border: 1px solid var(--border); padding: 30px; border-radius: 8px; }
-        .card h3 { font-size: 1.2rem; margin-bottom: 10px; color: #fff; }
+        
+        /* --- TECH BADGES --- */
+        .tech-badge { 
+            display: inline-flex; align-items: center; gap: 8px; 
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); 
+            padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; color: #fff;
+        }
+
+        /* --- CHAT PHONE UI --- */
+        .phone-frame {
+            max-width: 400px; margin: 0 auto; background: #fff; border-radius: 20px; 
+            overflow: hidden; border: 8px solid #1a1a1a; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .chat-header { background: #f5f5f5; padding: 15px; text-align: center; border-bottom: 1px solid #eee; color: #333; font-weight: 600; font-size: 0.9rem;}
+        .chat-body { padding: 20px; background: #fff; display: flex; flex-direction: column; gap: 15px; }
+        .msg { padding: 10px 15px; border-radius: 12px; font-size: 0.85rem; line-height: 1.4; max-width: 85%; }
+        .msg-ai { background: #E9E9EB; color: #000; align-self: flex-start; border-bottom-left-radius: 2px; }
+        .msg-user { background: #007AFF; color: #fff; align-self: flex-end; border-bottom-right-radius: 2px; }
 
         /* --- FORMS --- */
         .form-box { max-width: 500px; margin: 0 auto; background: var(--midnight-dark); padding: 40px; border: 1px solid var(--border); border-radius: 8px; text-align: left; }
-        .form-group { margin-bottom: 20px; }
         .form-label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: #fff; }
-        .form-input { width: 100%; padding: 12px; background: var(--midnight); border: 1px solid var(--border); color: #fff; border-radius: 4px; font-family: 'Inter', sans-serif; }
-        .form-input:focus { outline: none; border-color: var(--cyan); }
+        .form-input { width: 100%; padding: 12px; background: var(--midnight); border: 1px solid var(--border); color: #fff; border-radius: 4px; font-family: 'Inter', sans-serif; margin-bottom: 20px; }
+        
+        /* --- FAQ --- */
+        .faq-item { margin-bottom: 20px; background: var(--midnight-dark); padding: 20px; border-radius: 8px; border: 1px solid var(--border); }
+        .faq-item h3 { color: var(--cyan); margin-bottom: 5px; font-size: 1.1rem; }
 
-        /* --- MOBILE --- */
         @media (max-width: 768px) {
             .nav-links { display: none; position: absolute; top: 72px; right: 0; background: var(--midnight-dark); width: 100%; flex-direction: column; padding: 20px; border-bottom: 1px solid var(--border); }
             .nav-links.active { display: flex; }
             .hamburger { display: flex; }
             .hero h1 { font-size: 2rem; }
-            .grid-3 { grid-template-columns: 1fr; }
+            .grid-3, .grid-2 { grid-template-columns: 1fr; }
             .btn-primary, .btn-outline { width: 100%; margin: 0 0 15px 0; }
         }
-        
         .footer-links { margin-top: 15px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-        .footer-links a { color: var(--slate); font-size: 0.9rem; text-decoration: none; }
-        .footer-links a:hover { color: var(--cyan); }
     </style>
 </head>
 <body>
@@ -116,22 +119,17 @@
         <div class="container">
             <nav>
                 <a href="index.html">
-                    <img src="logo.jpg" 
-                         class="logo-img"
-                         onerror="if (this.src.endsWith('logo.jpg')) { this.src='logo.png'; } 
-                                  else if (this.src.endsWith('logo.png')) { this.src='logo.jpeg'; } 
-                                  else if (this.src.endsWith('logo.jpeg')) { this.src='Logo.jpg'; }"
-                         alt="AuraFlow AI Systems">
+                    <img src="logo.jpg" class="logo-img" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';" alt="AuraFlow">
+                    <span id="text-logo" style="display:none; font-weight:800; font-size:1.2rem; color:#fff;">AuraFlow.</span>
                 </a>
                 <div class="nav-links">
                     <a href="#how-it-works" class="nav-link">How It Works</a>
                     <a href="#demo" class="nav-link">Demo</a>
-                    <a href="#founding-partners" class="nav-link">Founding Partners</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
                     <a href="#faq" class="nav-link">FAQ</a>
                     <a href="#apply" class="nav-cta">Apply</a>
                 </div>
-                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" 
-                onclick="const nav=document.querySelector('.nav-links'); nav.classList.toggle('active'); this.setAttribute('aria-expanded', nav.classList.contains('active'));">
+                <button class="hamburger" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('active');">
                     <span></span><span></span><span></span>
                 </button>
             </nav>
@@ -141,429 +139,222 @@
     <section class="hero">
         <div class="container">
             <div style="display: inline-block; background: rgba(0,212,255,0.1); color: var(--cyan); padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 25px; border: 1px solid rgba(0,212,255,0.2);">
-                🚀 PRE-LAUNCH – Onboarding First 5 Founding Partners in February 2026
+                🚀 PRE-LAUNCH – Onboarding First 5 Founding Partners
             </div>
-
-            <h1>Reduce lost $10k+ opportunities caused by slow call response.</h1>
-            
+            <h1>Turn inbound calls into booked high-ticket sales—instantly.</h1>
             <p>AuraFlow deploys inbound sales infrastructure that instantly qualifies callers and routes high-intent prospects to your calendar.</p>
-
+            
             <div class="hero-bullets">
                 <div class="h-bullet">Founding partner rate locked through 2026</div>
-                <div class="h-bullet">I personally configure your system</div>
-                <div class="h-bullet">Direct access to me for changes</div>
-                <div class="h-bullet">Shape the roadmap before public launch</div>
+                <div class="h-bullet">Personally configured by Viraj Jadhav</div>
+                <div class="h-bullet">Risk-free Integration Guarantee</div>
             </div>
 
             <div style="margin-top: 30px;">
                 <a href="#demo" class="btn-primary">CALL THE DEMO LINE</a>
-                <a href="#apply" class="btn-outline">APPLY FOR FOUNDING PARTNER SPOT</a>
+                <a href="#apply" class="btn-outline">APPLY FOR PARTNER SPOT</a>
             </div>
-
+            
             <p style="margin-top: 40px; font-size: 0.9rem; opacity: 0.8;">
-                <strong>Built by Viraj J.</strong> | Spent the last 6+ months building and testing AI voice agents and automation workflows for inbound funnels after repeatedly seeing coaches lose high-ticket deals to slow follow-up.
-            </p>
-
-            <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.5;">
-                Founder-operated during pre-launch.
+                <strong>Built by Viraj Jadhav</strong> | Systems Architect specializing in Voice AI & CRM Automation.
             </p>
         </div>
     </section>
 
-    <section class="section-pad bg-dark">
-        <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="color: #fff; margin-bottom: 20px; font-size: 1.8rem;">Why I Built AuraFlow</h2>
-
-                <p style="margin-bottom: 20px;">
-                    In late 2025, I kept watching high-ticket coaches and consultants lose deals because they couldn't respond to inquiries fast enough. A prospect would fill out a form or call, and by the time the business owner followed up 4-6 hours later, they'd already moved on to a competitor.
-                </p>
-
-                <p style="margin-bottom: 20px;">
-                    I audited existing AI voice platforms and realized most were conversation tools—not sales infrastructure.
-                </p>
-
-                <p style="margin-bottom: 20px;">
-                    So I spent 6+ months building AuraFlow differently. It doesn't just answer calls—it qualifies prospects with your specific questions, scores their buying intent, syncs directly to GoHighLevel/HubSpot, and only books your calendar with ready-to-buy leads.
-                </p>
-
-                <p style="margin-bottom: 30px;">
-                    Right now, the system works in testing. But I need 5 real businesses to deploy it with to prove it handles actual call volume, edge cases, and real-world sales scenarios.
-                </p>
-
-                <div style="padding: 20px; background: var(--midnight); border: 1px solid var(--border); border-radius: 6px;">
-                    <p style="font-weight: 600; color: #fff; margin-bottom: 10px;">Connect with me:</p>
-                    <p style="font-size: 0.9rem; margin-bottom: 5px;">
-                        📧 <a href="mailto:auraflowaisystems@gmail.com" style="color: var(--cyan); text-decoration: underline;">auraflowaisystems@gmail.com</a>
-                    </p>
-                    <p style="font-size: 0.9rem;">
-                        💼 <a href="https://www.linkedin.com/in/viraj-jadhav-45687839a" target="_blank" style="color: var(--cyan); text-decoration: underline;">LinkedIn: Viraj J.</a>
-                    </p>
-                </div>
-            </div>
+    <div style="background: #05111D; padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <p style="font-size: 0.8rem; color: #8A94A6; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase;">Powered By Enterprise Infrastructure</p>
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <div class="tech-badge">⚡ Vapi</div>
+            <div class="tech-badge">🤖 OpenAI Infrastructure</div>
+            <div class="tech-badge">📞 Twilio</div>
+            <div class="tech-badge">🟧 HubSpot</div>
+            <div class="tech-badge">⚡ GoHighLevel</div>
         </div>
-    </section>
+    </div>
 
     <section id="demo" class="section-pad">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">See It In Action</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px auto;">
-                Instead of showing you vague statistics, here's what you'll actually get. This is what your prospects will experience when they call.
+            <h2 class="section-title text-center">See It In Action</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 40px auto;">
+                This isn't a chatbot. It's an intelligent voice agent. Call to test it, or read the transcript below.
             </p>
 
-            <div style="max-width: 800px; margin: 0 auto; background: var(--midnight-dark); border: 1px solid var(--border); border-radius: 6px; padding: 60px 40px; text-align: center;">
-                
-                <div style="background: rgba(0, 212, 255, 0.08); border: 1px solid var(--cyan); padding: 30px; border-radius: 8px; margin-bottom: 20px;">
-                    <p style="color: #fff; font-weight: 700; font-size: 1.3rem; margin-bottom: 15px;">📞 Call The Live Demo Line</p>
-                    <a href="tel:+14245350843" style="font-size: 2rem; color: var(--cyan); font-weight: 800; text-decoration: none; display: block; margin-bottom: 10px;">+1 (424) 535-0843</a>
-                    <p style="font-size: 0.95rem; opacity: 0.9;">Call this number now to experience the qualification flow in real-time.</p>
+            <div class="grid-2">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                    <div style="background: rgba(0, 212, 255, 0.08); border: 1px solid var(--cyan); padding: 30px; border-radius: 8px; width: 100%;">
+                        <p style="color: #fff; font-weight: 700; font-size: 1.3rem; margin-bottom: 15px;">Call The Live Demo Line</p>
+                        <a href="tel:+14245350843" style="font-size: 2rem; color: var(--cyan); font-weight: 800; text-decoration: none; display: block; margin-bottom: 10px;">+1 (424) 535-0843</a>
+                        <p style="font-size: 0.95rem; opacity: 0.9;">Experience the qualification flow in real-time.</p>
+                        <p style="font-size: 0.75rem; opacity: 0.5; margin-top: 15px;">*Calls are recorded for quality assurance & demo purposes.</p>
+                    </div>
                 </div>
-                
-                <p style="font-size: 0.95rem; margin-top: 25px;">
-                    Want a walkthrough? 
-                    <a href="mailto:auraflowaisystems@gmail.com?subject=Request%20Personal%20Demo" style="color: var(--cyan); text-decoration: underline; font-weight: 600;">
-                        Email me →
-                    </a>
-                </p>
-            </div>
 
-            <p style="text-align: center; margin-top: 30px; font-size: 0.85rem; opacity: 0.6;">
-                Founding partners will see the full system during discovery call before committing.
-            </p>
+                <div class="phone-frame">
+                    <div class="chat-header">AuraFlow Assistant (Live)</div>
+                    <div class="chat-body">
+                        <div class="msg msg-ai">Hi, I saw you applied for our coaching program. Are you currently doing over $25k/month?</div>
+                        <div class="msg msg-user">Yeah, we did about $32k last month. Struggling to scale though.</div>
+                        <div class="msg msg-ai">Understood. Our founder has an opening Tuesday at 10 AM to discuss scaling strategies. Does that work?</div>
+                        <div class="msg msg-user">Yes, that works perfectly.</div>
+                        <div style="text-align: center; font-size: 0.7rem; color: #888; margin-top: 5px;">Lead Qualified & Booked to CRM</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="how-it-works" class="section-pad bg-dark">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">How It Works</h2>
+            <h2 class="section-title text-center">How It Works</h2>
+            
+            <div style="text-align: center; margin: 60px 0 80px 0;">
+                <img src="process-flow.png" alt="AuraFlow Process" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+            </div>
             
             <div class="grid-3">
                 <div class="card">
                     <h3>1. Instant Answer</h3>
-                    <p>When someone calls, AuraFlow picks up with near-instant response. Reduces hold times and missed calls.</p>
+                    <p>AuraFlow picks up immediately. No hold times, no missed opportunities.</p>
                 </div>
-                
                 <div class="card">
                     <h3>2. Smart Qualification</h3>
-                    <p>The AI asks your specific qualifying questions—budget, timeline, fit—and scores each lead based on buying intent.</p>
+                    <p>AI asks your specific questions to score leads on budget and timeline.</p>
                 </div>
-                
                 <div class="card">
-                    <h3>3. Auto-Route to You</h3>
-                    <p>High-intent leads go straight to your calendar. Low-fit prospects get nurture sequences. You focus on prioritized conversations.</p>
-                </div>
-            </div>
-
-            <div style="margin-top: 60px; text-align: center;">
-                <p style="font-size: 0.85rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7;">
-                    Integrates with your existing tools
-                </p>
-                <p style="font-size: 1.05rem; color: #fff; font-weight: 600;">
-                    GoHighLevel · HubSpot · Zapier · Make · Twilio
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="founding-partners" class="section-pad">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center;">Founding Partner Program</h2>
-            
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <span style="background: rgba(0,212,255,0.15); color: var(--cyan); padding: 10px 20px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">
-                        Only 5 founding partners will be accepted in February 2026
-                    </span>
-                </div>
-
-                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px;">
-                    I'm personally deploying AuraFlow for the first 5 businesses. Here's what you get:
-                </p>
-
-                <div class="card" style="margin-bottom: 30px;">
-                    <h3 style="color: var(--cyan); margin-bottom: 20px;">What You Get as a Founding Partner</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--cyan);">→</span>
-                            <strong style="color: #fff;">Infrastructure Access:</strong> Complete AI voice setup and CRM integration ($397/mo retainer).
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--cyan);">→</span>
-                            <strong style="color: #fff;">Usage Included:</strong> 400 minutes of AI talk time per month (approx. 50-80 leads).
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--cyan);">→</span>
-                            <strong style="color: #fff;">Scale-Friendly:</strong> Additional minutes billed at $0.85/min.
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--cyan);">→</span>
-                            <strong style="color: #fff;">Founder-Led Implementation:</strong> Direct access to the systems architect. No junior techs.
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 30px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--cyan);">→</span>
-                            <strong style="color: #fff;">Roadmap influence:</strong> Your feedback shapes what features get built next.
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="card" style="margin-bottom: 30px;">
-                    <h3 style="margin-bottom: 20px;">What I Need From You</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 12px;">✓ Currently doing $25K-$100K+/month in revenue</li>
-                        <li style="margin-bottom: 12px;">✓ Getting 15+ inbound calls or form fills per week</li>
-                        <li style="margin-bottom: 12px;">✓ Selling high-ticket offers ($3K-$25K+)</li>
-                        <li style="margin-bottom: 12px;">✓ Using a CRM (GoHighLevel, HubSpot, or similar)</li>
-                        <li style="margin-bottom: 12px;">✓ Willing to give honest feedback during first 30 days</li>
-                    </ul>
-                </div>
-
-                <div style="text-align:center;margin-bottom:30px;padding:25px;border:1px solid var(--cyan);border-radius:6px;background:rgba(0,212,255,0.05);">
-                    <strong style="color:var(--cyan);font-size:1.05rem;">Integration Guarantee</strong>
-                    <p style="margin-top:10px; color: var(--slate);">
-                        If AuraFlow cannot be deployed into your stack during setup, your deposit is returned before going live.
-                    </p>
-                </div>
-
-                <div style="text-align: center; padding: 40px; background: var(--midnight); border: 2px solid var(--cyan); border-radius: 6px; margin-bottom: 30px;">
-                    <h3 style="color: var(--cyan); margin-bottom: 20px;">Founding Partner Pricing</h3>
-                    <p style="font-size: 2.5rem; font-weight: 700; color: #fff; margin-bottom: 10px;">
-                        $2,500 <span style="font-size: 1.2rem; opacity: 0.7;">setup</span>
-                    </p>
-                    <p style="font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 20px;">
-                        $397<span style="font-size: 1rem; opacity: 0.7;">/month</span>
-                    </p>
-                    <p style="font-size: 0.9rem; margin-bottom: 10px; color: var(--slate);">
-                        Includes 400 system minutes/mo (Inbound usage)
-                    </p>
-                    <p style="font-size: 0.85rem; color: var(--cyan); font-weight: 600; line-height: 1.5;">
-                        Overage: $0.85/min<br>
-                        <span style="font-weight:400; opacity:0.7; font-size:0.8rem; color: #fff;">Covers AI, telephony, infrastructure, monitoring, and support.</span>
-                    </p>
-                </div>
-
-                <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.8; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; line-height: 1.6;">
-                    Founding Partner tier is designed for pilot-scale inbound teams.<br><br>
-                    High-volume teams (2k+ mins/mo) or SLA requirements can request a Scale assessment during application review.
-                </p>
-                <p style="margin-top: 15px; font-size: 0.85rem; color: var(--cyan); text-align: center;">
-                    Public launch pricing will increase once founding partner slots close.
-                </p>
-
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="#apply" class="btn-primary" style="font-size: 1.1rem; padding: 20px 40px;">APPLY FOR FOUNDING PARTNER SPOT</a>
-                    <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.7;">Typically responds within 1 business day.</p>
+                    <h3>3. Auto-Route</h3>
+                    <p>Qualified leads go to your calendar. Unqualified ones go to nurture.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-pad bg-dark">
+    <section id="pricing" class="section-pad">
         <div class="container">
-            <div style="max-width: 650px; margin: 0 auto; text-align: center;">
-                <h2 class="section-title">Who This Is Built For</h2>
-                
-                <div style="background: var(--midnight); border: 1px solid var(--border); padding: 40px; border-radius: 6px; text-align: left;">
-                    <h3 style="color: var(--cyan); margin-bottom: 20px;">Perfect Fit:</h3>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
-                        <li style="margin-bottom: 12px;">✅ High-ticket coaches/consultants ($3K-$25K+ programs)</li>
-                        <li style="margin-bottom: 12px;">✅ Business doing $25K-$100K+/month</li>
-                        <li style="margin-bottom: 12px;">✅ Getting consistent inbound calls (not cold outbound)</li>
-                        <li style="margin-bottom: 12px;">✅ Using CRM (GoHighLevel, HubSpot, etc.)</li>
-                        <li style="margin-bottom: 12px;">✅ Frustrated by missed calls or slow follow-up</li>
-                    </ul>
+            <h2 class="section-title text-center">Founding Partner Pilot</h2>
+            <div style="max-width: 600px; margin: 0 auto; margin-top: 40px;">
+                <div class="card" style="text-align: center; border: 2px solid var(--cyan);">
+                    <h3 style="color: var(--cyan); margin-bottom: 20px;">All-Inclusive Pilot</h3>
+                    <div style="margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                        <p style="font-size: 1.2rem; font-weight: 700; color: #fff;">Setup: $1,500 <span style="font-size: 0.9rem; font-weight: 400; opacity: 0.7;">(One-time)</span></p>
+                        <p style="color: var(--slate); font-size: 0.9rem;">Full build, CRM integration, Scripting & Testing</p>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <p style="font-size: 1.2rem; font-weight: 700; color: #fff;">Platform: $497/mo</p>
+                        <p style="color: var(--slate); font-size: 0.9rem;">Includes 400 mins (~80 leads) + Support</p>
+                    </div>
+                    
+                    <p style="font-size: 0.8rem; color: #8A94A6; margin-bottom: 20px;">
+                        *Typical post-pilot enterprise deployments range $1,500–$3,500/mo.
+                    </p>
 
-                    <h3 style="color: var(--slate); margin-bottom: 20px;">Not a Fit:</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 12px; opacity: 0.7;">❌ Brand new businesses with <15 leads/week</li>
-                        <li style="margin-bottom: 12px; opacity: 0.7;">❌ E-commerce or low-ticket offers</li>
-                        <li style="margin-bottom: 12px; opacity: 0.7;">❌ Cold calling operations (this is for INBOUND only)</li>
-                    </ul>
+                    <div style="background: rgba(0,212,255,0.1); padding: 10px; border-radius: 4px; font-size: 0.85rem; color: #fff;">
+                        <strong>Integration Guarantee:</strong> If we can't integrate with your stack, we refund your setup fee.
+                    </div>
+                    <a href="#apply" class="btn-primary" style="margin-top: 30px; display: inline-block;">APPLY FOR SPOT</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="section-pad">
+    <section id="faq" class="section-pad bg-dark">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">Common Questions</h2>
-            
-            <div style="max-width: 800px; margin: 0 auto;">
-                
-                <div class="card" style="margin-bottom: 20px;">
-                    <h3 style="font-size: 1.1rem; color: var(--cyan); margin-bottom: 12px;">Does AuraFlow handle outbound cold calling?</h3>
-                    <p>AuraFlow is built for inbound demand capture and qualification. Outbound systems are scoped and priced separately.</p>
+            <h2 class="section-title text-center">FAQ</h2>
+            <div style="max-width: 800px; margin: 30px auto 0 auto;">
+                <div class="faq-item">
+                    <h3>Where are you based?</h3>
+                    <p>AuraFlow operates globally. The founder is based in India, while all client phone numbers and customer data are hosted in US-based infrastructure (AWS/Twilio). Support is provided during US business hours.</p>
                 </div>
-
-                <div class="card" style="margin-bottom: 20px;">
-                    <h3 style="font-size: 1.1rem; color: var(--cyan); margin-bottom: 12px;">Why should I trust a pre-launch product?</h3>
-                    <p>You shouldn't blindly trust it. That's why I'm offering a working demo you can test, a setup fee return policy, and direct access to me—not a support ticket system. You're not buying from a corporation; you're working directly with the person who built this.</p>
-                </div>
-
-                <div class="card" style="margin-bottom: 20px;">
-                    <h3 style="font-size: 1.1rem; color: var(--cyan); margin-bottom: 12px;">What if this isn't a fit after we start setup?</h3>
-                    <p>If we determine during deployment that AuraFlow cannot integrate cleanly with your specific tech stack, I'll return the setup fee before going live. I only keep the setup fee once the system is deployed and functioning as agreed.</p>
-                </div>
-
-                <div class="card" style="margin-bottom: 20px;">
-                    <h3 style="font-size: 1.1rem; color: var(--cyan); margin-bottom: 12px;">What if it breaks or doesn't work properly?</h3>
-                    <p>Founding partners get priority support. I aim for same business day response for critical issues. This is pre-launch, so I'm treating you as a partner, not just a customer.</p>
-                </div>
-
-                <div class="card" style="margin-bottom: 20px;">
-                    <h3 style="font-size: 1.1rem; color: var(--cyan); margin-bottom: 12px;">Do I need technical skills to use this?</h3>
-                    <p>No. I handle 100% of the setup. You just need to give me access to your CRM and phone system so I can integrate everything. Total time investment from you: about 2-3 hours across discovery call, script review, and testing.</p>
-                </div>
-
-                <div class="card" style="margin-bottom: 20px;">
-                    <h3 style="font-size: 1.1rem; color: var(--cyan); margin-bottom: 12px;">How long does setup take?</h3>
-                    <p>Typically 7-14 days from deposit to live system, depending on CRM complexity. This includes discovery, configuration, integration, testing, and your approval before going live with real calls.</p>
-                </div>
-
-                <div class="card" style="margin-bottom: 20px;">
-                    <h3 style="font-size: 1.1rem; color: var(--cyan); margin-bottom: 12px;">Can I cancel anytime?</h3>
-                    <p>Setup fee is non-refundable once the system is live and working (because I've done custom configuration). Monthly subscription can be cancelled with 30 days notice, no questions asked.</p>
-                </div>
-
-                <div class="card" style="margin-bottom: 20px;">
-                    <h3 style="font-size: 1.1rem; color: var(--cyan); margin-bottom: 12px;">What makes this different from other AI voice tools?</h3>
-                    <p>Most AI voice tools answer calls but don't actually route qualified leads properly. They're great at conversation but terrible at integration. AuraFlow is built specifically for high-ticket sales funnels—it connects to your CRM, scores leads, and only books your calendar with ready buyers. Plus, you get direct access to me instead of generic support.</p>
-                </div>
-
-                <div class="card">
-                    <h3 style="font-size: 1.1rem; color: var(--cyan); margin-bottom: 12px;">Why only 5 founding partners?</h3>
-                    <p>We maintain strict quality control during pre-launch. Limiting intake to 5 partners ensures every deployment receives full architectural oversight before we open public enrollment.</p>
-                </div>
+                <div class="faq-item"><h3>Does this replace my sales team?</h3><p>No, it replaces the SDR/Setter role. Your closers still take the booked calls.</p></div>
+                <div class="faq-item"><h3>What CRMs do you support?</h3><p>Native integrations for GoHighLevel and HubSpot. Others via Zapier.</p></div>
+                <div class="faq-item"><h3>How long does setup take?</h3><p>Typically 14 days from deposit to live calls.</p></div>
             </div>
         </div>
     </section>
 
-    <section id="apply" class="apply-section">
+    <section id="about" class="section-pad">
         <div class="container">
-            <h2 class="section-title">Apply for Founding Partner Spot</h2>
-            
-            <p style="margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">
-                I'm reviewing applications personally and responding within 1 business day. This is a quick fit check—not a long sales process.
-            </p>
-            
-            <p style="margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 0.95rem; opacity: 0.8;">
-                If you're a fit, we'll schedule a 15-minute call to discuss your funnel and whether AuraFlow makes sense for you.
-            </p>
-            
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <h2>Meet The Founder</h2>
+                <img src="viraj-photo.jpg" onerror="this.style.display='none'; document.getElementById('monogram').style.display='flex';" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 20px auto; display: block;">
+                <div id="monogram" style="display:none; width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #00D4FF, #0B1F33); margin: 20px auto; align-items: center; justify-content: center; color: #fff; font-size: 2.5rem; font-weight: 800;">VJ</div>
+                <h3 style="color: #fff; margin-bottom: 10px;">Viraj Jadhav</h3>
+                <p>I built AuraFlow to solve the "Lead Response Gap" I saw costing coaches thousands every month.</p>
+                <a href="https://www.linkedin.com/in/viraj-jadhav-45687839a" target="_blank" style="color: var(--cyan); text-decoration: underline;">Connect on LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="apply" class="section-pad bg-dark">
+        <div class="container">
+            <h2 class="text-center">Apply for Founding Partner Spot</h2>
+            <p class="text-center" style="margin-bottom: 40px;">If you're a fit, we'll schedule a 15-minute demo.</p>
             <div class="form-box">
-                <form action="https://formsubmit.co/auraflowaisystems@gmail.com" method="POST" enctype="application/x-www-form-urlencoded>
-                    <input type="hidden" name="_next" value="/success.html">
+                <form action="https://formsubmit.co/viraj@auraflow.agency" method="POST" enctype="application/x-www-form-urlencoded">
+                    <input type="hidden" name="_next" value="https://auraflow.agency/success.html">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="text" name="_honey" style="display:none">
                     
-                    <div class="form-group">
-                        <label class="form-label">First Name *</label>
-                        <input type="text" name="name" class="form-input" required>
-                    </div>
+                    <label class="form-label">Name</label>
+                    <input type="text" name="name" class="form-input" required>
                     
-                    <div class="form-group">
-                        <label class="form-label">Business Email *</label>
-                        <input type="email" name="email" class="form-input" required>
-                    </div>
+                    <label class="form-label">Business Email</label>
+                    <input type="email" name="email" class="form-input" required>
+                    
+                    <label class="form-label">Phone</label>
+                    <input type="tel" name="phone" class="form-input" required>
+                    
+                    <label class="form-label">Current CRM</label>
+                    <input type="text" name="crm" class="form-input" placeholder="e.g. GoHighLevel, HubSpot" required>
+                    
+                    <label class="form-label">Website</label>
+                    <input type="url" name="website" class="form-input" required>
 
-                    <div class="form-group">
-                        <label class="form-label">Phone Number *</label>
-                        <input type="tel" name="phone" class="form-input" required>
-                    </div>
+                    <label class="form-label">Monthly Revenue</label>
+                    <select name="revenue" class="form-input">
+                        <option>Under $25k</option>
+                        <option>$25k - $50k</option>
+                        <option>$50k - $100k</option>
+                        <option>$100k+</option>
+                    </select>
 
-                    <div class="form-group">
-                        <label class="form-label">CRM in Use *</label>
-                        <select name="crm" class="form-input" required>
-                            <option value="" disabled selected>Select CRM...</option>
-                            <option>GoHighLevel</option>
-                            <option>HubSpot</option>
-                            <option>Salesforce</option>
-                            <option>Pipedrive</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
+                    <label class="form-label">Approx Inbound Leads/Month</label>
+                    <select name="lead_volume" class="form-input">
+                        <option>Under 50</option>
+                        <option>50 - 200</option>
+                        <option>200+</option>
+                    </select>
 
-                    <div class="form-group">
-                        <label class="form-label">Website or Main Link *</label>
-                        <input type="url" name="website" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Monthly Revenue Range *</label>
-                        <select name="revenue" class="form-input" required>
-                            <option value="" disabled selected>Select revenue range...</option>
-                            <option value="under_25k">Under $25k/mo</option>
-                            <option value="25k_50k">$25k - $50k/mo</option>
-                            <option value="50k_100k">$50k - $100k/mo</option>
-                            <option value="100k_plus">$100k+/mo</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">How many inbound calls/leads per week? *</label>
-                        <select name="lead_volume" class="form-input" required>
-                            <option value="" disabled selected>Select volume...</option>
-                            <option value="under_10">Less than 10/week</option>
-                            <option value="10_25">10-25/week</option>
-                            <option value="25_50">25-50/week</option>
-                            <option value="50_plus">50+/week</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">What's your biggest lead follow-up problem right now?</label>
-                        <textarea name="problem" class="form-input" rows="3" placeholder="e.g., 'We miss 30% of calls during busy hours' or 'Follow-up takes 4+ hours'"></textarea>
-                    </div>
+                    <label class="form-label">What is your biggest follow-up problem?</label>
+                    <textarea name="problem" class="form-input" rows="3" placeholder="e.g. We take too long to call back..."></textarea>
 
                     <button type="submit" class="btn-primary" style="width: 100%;">SUBMIT APPLICATION</button>
-                    
-                    <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.7; text-align: center;">Typically responds within 1 business day.</p>
+                    <p style="font-size: 0.75rem; text-align: center; margin-top: 15px; opacity: 0.6;">By submitting, you agree to receive inquiry-related messages.</p>
                 </form>
-
-                <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid var(--border); text-align: center;">
-                    <p style="font-size: 0.9rem; margin-bottom: 15px;">Prefer to talk first?</p>
-                    <a href="mailto:auraflowaisystems@gmail.com?subject=Founding%20Partner%20Discovery%20Call" style="color: var(--cyan); text-decoration: underline; font-weight: 600;">
-                        Email me to schedule a 15-min discovery call →
-                    </a>
-                </div>
             </div>
-
-            <p style="margin-top: 40px; font-size: 0.85rem; opacity: 0.5; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
-                I only work with businesses that have consistent inbound demand and are operationally ready. If you're just getting started or doing less than $25K/month, let's reconnect in 3-6 months when you have more volume.
-            </p>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p style="font-size: 1rem; color: #fff; margin-bottom: 15px; font-weight: 600;">AuraFlow AI Systems</p>
-            <p style="font-size: 0.9rem; color: var(--slate); margin-bottom: 20px;">Pre-launch phase. Founder-operated. No automated onboarding.</p>
-
-            <div style="max-width: 700px; margin: 0 auto 30px auto; padding: 20px; background: rgba(0,212,255,0.05); border: 1px solid rgba(0,212,255,0.2); border-radius: 6px;">
-                <p style="font-size: 0.85rem; line-height: 1.6;">
-                    <strong style="color: var(--cyan);">Honest Disclosure:</strong> This is an early-stage founder-built automation system. I'm personally building and deploying each installation. 
-                    <br><br>
-                    Enterprise deployments with dedicated SLAs are scoped separately. Commercial terms governed by service agreements.
-                </p>
-            </div>
-
-            <p style="font-size: 0.9rem; margin-bottom: 10px;">
-                Questions? <a href="mailto:auraflowaisystems@gmail.com" style="color: var(--cyan);">Email me directly</a>
-            </p>
-            
-            <p style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 20px;">
-                Built by Viraj J. | <a href="https://www.linkedin.com/in/viraj-jadhav-45687839a" target="_blank" style="color: var(--cyan);">LinkedIn</a>
-            </p>
-
+        <div class="container" style="text-align: center;">
+            <p style="font-size: 1rem; color: #fff;">AuraFlow AI Systems</p>
             <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="mailto:auraflowaisystems@gmail.com">Contact</a>
+                <a href="privacy.html" style="color: var(--slate); margin: 0 10px;">Privacy</a>
+                <a href="terms.html" style="color: var(--slate); margin: 0 10px;">Terms</a>
+                <a href="mailto:viraj@auraflow.agency" style="color: var(--slate); margin: 0 10px;">Contact</a>
             </div>
-
-            <p style="margin-top: 20px; font-size: 0.75rem; opacity: 0.4;">&copy; 2026 AuraFlow AI Systems. All rights reserved.</p>
+            <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 20px;">&copy; 2026 AuraFlow AI Systems.</p>
+            <p style="font-size: 0.75rem; opacity: 0.3;">AuraFlow AI Systems is a sole proprietorship registered in India. Client data & call routing hosted in US infrastructure.</p>
         </div>
     </footer>
 
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #05111D; border-top: 1px solid #00D4FF; padding: 15px; display: flex; justify-content: center; align-items: center; gap: 20px; z-index: 999;">
+        <p style="margin: 0; font-size: 0.8rem;">We use cookies to improve your experience. <a href="privacy.html" style="color: var(--cyan);">Read Policy</a></p>
+        <div style="display: flex; gap: 10px;">
+            <button onclick="document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('cookieConsent','false')" style="background: transparent; border: 1px solid #8A94A6; color: #fff; padding: 5px 15px; border-radius: 4px; font-weight: 600; cursor: pointer;">Decline</button>
+            <button onclick="document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('cookieConsent','true')" style="background: var(--cyan); border: none; color: #000; padding: 5px 15px; border-radius: 4px; font-weight: 700; cursor: pointer;">Accept</button>
+        </div>
+    </div>
+    <script>if(localStorage.getItem('cookieConsent')!==null)document.getElementById('cookie-banner').style.display='none';</script>
+
 </body>
 </html>
-
