@@ -111,7 +111,12 @@
         <div class="container">
             <nav>
                 <a href="index.html">
-                    <img src="logo.png" alt="AuraFlow AI Systems" class="logo-img" width="120" height="36">
+            <img src="logo.jpg" 
+     onerror="if (this.src.endsWith('logo.jpg')) { this.src='logo.png'; } 
+              else if (this.src.endsWith('logo.png')) { this.src='logo.jpeg'; } 
+              else if (this.src.endsWith('logo.jpeg')) { this.src='Logo.jpg'; }"
+     alt="AuraFlow AI Systems" 
+     style="height: 40px; width: auto; display: block;">
                 </a>
                 <div class="nav-links">
                     <a href="#how-it-works" class="nav-link">How It Works</a>
@@ -540,4 +545,5 @@
 </body>
 
 </html>
+
 
