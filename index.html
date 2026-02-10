@@ -55,7 +55,15 @@
         /* --- HEADER --- */
         header { padding: 15px 0; position: fixed; width: 100%; top: 0; background: var(--solid-nav); z-index: 1000; border-bottom: 1px solid var(--border); backdrop-filter: blur(10px); }
         nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo-img { height: 32px; width: auto; display: block; }
+        .logo-img {
+    height: 60px !important;
+    width: auto !important;
+    background: red;
+    border: 3px solid yellow;
+    z-index: 9999;
+}
+
+        
         
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-link { font-size: 0.85rem; font-weight: 500; color: var(--slate); }
@@ -531,4 +539,5 @@
     </footer>
 
 </body>
+
 </html>
